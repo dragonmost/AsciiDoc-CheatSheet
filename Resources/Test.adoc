@@ -1,0 +1,18 @@
+=== Reference Document
+
+Different file can be referenced and rendered
+
+//tag::Partial[]
+.Partial Tags
+[%collapsible]
+====
+Included files can also be partialy rendered using tags
+====
+//end::Partial[]
+
+.Partial Lines
+[%collapsible]
+====
+Included files can also be partialy rendered using line numbers
+====
+

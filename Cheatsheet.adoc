@@ -1,0 +1,289 @@
+= Asciidoc Cheatsheet.footnote:[link:https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference[AsciiDoctor Syntax Documentation]]
+Header details
+:homepage: https://www.github.com/dragonmost
+:toc:
+:source-highlighter: highlight.js
+
+== Paragraphs
+
+Paragraphs don't require special markup in AsciiDoc.
+A paragraph is defined by one or more consecutive lines of text.
+Newlines within a paragraph are not displayed.
+
+Leave at least one blank line to begin a new paragraph.
+
+To add a new line to a paragraph you need to use "+" +
+Like this paragraph does
+
+[%hardbreaks]
+To add a new line to a paragraph
+You can also add a [.underline]#%hardbreak# attribute
+
+ A literal paragraph.
+One or more consecutive lines indented by at least one space.
+Literal paragraphs are monospace
+
+[.lead]
+Lead paragraph with a larger font.
+
+== Text Formating
+:hardbreaks-option:
+
+*Bold*
+_Italic_
+`Monospace`
+*_Combined_*
+#Highlight#
+[.underline]#Underline#
+[.line-through]#Scratched#
+[.customTheme]#Custom theme#
+^Super^script
+~Sub~script
+"`BetterQuotes`"
+
+== Links
+
+[%hardbreaks]
+https://www.github.com/dragonmost[Github]
+link:github.com/dragonmost[Github]
+
+[%hardbreaks]
+Link to differente part of this documentation <<Paragraphs>>.
+Link to differente part of this documentation with different name <<Paragraphs, Top>>.
+Link to differente part of this documentation by <<ID, Id>>.
+Original work<<a>> containg references
+
+== Headers
+[[h3,H3]]
+[discrete]
+=== Header 3footnote:[link:https://github.com/asciidoctor/asciidoctor/issues/2903#issuecomment-453276667[footnote issue]]
+[discrete]
+==== Header 4
+[discrete]
+===== Header 5
+
+:allow-uri-read:
+== Include Files
+
+[discrete]
+include::Resources/Test.adoc[]
+
+[discrete]
+==== Partial Files
+
+include::Resources/Test.adoc[tag=Partial]
+
+include::Resources/Test.adoc[lines=13..18]
+
+include::https://raw.githubusercontent.com/dragonmost/PlebQuest-2.0/master/README.md[]
+
+== List
+
+[discrete]
+==== Unordered List
+* Item
+** Nested Item
+*** Nested Item
+* Item
+
+[discrete]
+==== Ordered List
+. Item
+.. Nested Item
+... Nested Item
+. Item
+
+[discrete]
+==== Checklist
+* [*] Checked
+* [x] Checked
+* [ ] Unchecked
+* Not checkable
+
+{sp} 
+
+Description:: 
+Text::
+This is a description 
+Conclusion:: 
+Text:::
+This is a second term
+
+== Media
+
+[discrete]
+==== Image
+
+image::Resources/Bakerwave.png[BakerWave, 64, 64]
+
+image::Resources/bakerwave.png[BakerWave, 64, 64, float=right]
+
+image::https://avatars.githubusercontent.com/u/9544210?v=4[title="Caption"]
+
+[discrete]
+==== Audio
+
+audio::Resources/Coin.wav[title="Coin sound"]
+
+[discrete]
+==== Video
+
+video::oYmqJl4MoNI[youtube, start=10, end=12, theme=light, title="Street 112"]
+
+== Button
+:experimental:
+
+kbd:[WINDOWS+SHIFT+S]
+Screenshot
+
+== Source
+
+`literal line`
+
+AsciiDoc required inline `+literals+` need to be surrounded by pluses as well as backticks
+
+....
+Literal Block
+Uses dots instead
+....
+
+.C#
+[source, csharp, linenums, highlight=2..3]
+----
+public static void Main(string[] args)
+{
+    Console.WriteLine("Hello World"); // <1>
+}
+----
+<1> Callout
+
+.Source File
+[source, csharp]
+----
+include::Source.cs[tag=Method, indent=0]
+----
+
+== Admonitions
+
+[NOTE] 
+====
+Note Block
+====
+
+TIP: Tip
+
+IMPORTANT: Important
+
+WARNING: Warning
+
+CAUTION: Caution
+
+== Delimiters
+
+****
+Delimiter Block
+****
+
+[quote, Random Hairdresser]
+Mais qu'essez tu voulus tu que je fez.
+
+Full line break
+
+---
+
+***
+
+'''
+
+Page break
+
+<<<
+
+== Table
+
+.Title
+|===
+| Header 1 | Header 2
+| Row 1, Col 1 | Row 1, Col 2
+| Row 2, Col 1 | Row 2, Col 2
+|===
+
+.Alternative 
+[%header, cols=2*]
+|===
+| Header 1
+| Header 2
+
+| Row 1, Col 1
+| Row 1, Col 2
+
+| Row 2, Col 1
+| Row 2, Col 2
+|===
+
+.Different width
+[%header, cols="1,1,3"]
+|===
+| Header 1 | Header 2 | Header 3
+|===
+
+.CSV Data
+,===
+Name, Age
+Baker, 26
+Thony, 23
+,===
+
+.Merged Cells
+[cols="e,m,^,>s",width="25%"]
+|===
+|1 >s|2 |3 |4
+^|5 2.2+^.^|6 .3+<.>m|7
+^|8
+|9 2+>|10
+|===
+
+== ID, Roles, Options
+
+[#ID.role%option]
+Id followed by role and option
+
+[options="option1, option2"]
+Option Block
+
+[opt="option1, option2"]
+Shorthand Option Block
+
+== Comments
+
+// Single line comment
+Single line comment using double slash
+
+////
+Multi line comment
+////
+Multi line comment using quad slash block
+
+== Attributes
+
+.Index{counter2:index:0}
+Index is starting value
+`counter:index` used to increment
+{counter:index} : {index}
+{counter:index} : {index}
+
+== Text Shorthand
+
+* (C)
+* (R)
+* (TM)
+* --
+* ...
+* ->
+* =>
+
+== Reference
+
+
+[bibliograhy]
+* [[a]] Reference documentation
