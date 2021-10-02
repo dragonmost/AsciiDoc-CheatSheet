@@ -116,7 +116,7 @@ This is a second term
 
 image::Resources/Bakerwave.png[BakerWave, 64, 64]
 
-image::Resources/bakerwave.png[BakerWave, 64, 64, float=right]
+image::Resources/Bakerwave.png[BakerWave, 64, 64, float=right]
 
 image::https://avatars.githubusercontent.com/u/9544210?v=4[title="Caption"]
 
