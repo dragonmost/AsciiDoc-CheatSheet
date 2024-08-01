@@ -184,6 +184,12 @@ CAUTION: Caution
 Delimiter Block
 ****
 
+[%collapsible]
+.Collapsible block
+====
+Collapsible block
+====
+
 [quote, Random Hairdresser]
 Mais qu'essez tu voulus tu que je fez.
 
